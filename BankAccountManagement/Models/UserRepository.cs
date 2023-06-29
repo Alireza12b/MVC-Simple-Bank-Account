@@ -30,12 +30,16 @@ namespace BankAccountManagement.Models
             if (amount <= userAcc.Debit)
             {
                 userAcc.Debit -= amount;
+                userAcc.Description = description;
+                userAcc.TransactionDate = DateTime.Now;
             }
             else
             {
                 tempAmount = amount - userAcc.Debit;
                 userAcc.Debit = 0;
                 userAcc.Credit += tempAmount;
+                userAcc.Description = description;
+                userAcc.TransactionDate = DateTime.Now;
             }
         }
 
