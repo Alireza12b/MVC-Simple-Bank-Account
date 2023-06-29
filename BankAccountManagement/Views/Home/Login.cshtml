@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model BankAccountManagement.Controllers.HomeController
+
+@if (TempData["LoginFail"] != null)
+{
+    <div class="alert alert-danger">@TempData["LoginFail"]</div>
+}
+
+<form method="get" asp-action="Login">
+    <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">National Code</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="NationalId" name="NationalId">
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Phone Number</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="Phone" name="Phone">
+        </div>
+        <div>
+            <Button class="btn btn-primary" type="submit" style="margin-top:40px ; margin-left:10px">Login</Button>
+        </div>
+    </div>
+</form>
